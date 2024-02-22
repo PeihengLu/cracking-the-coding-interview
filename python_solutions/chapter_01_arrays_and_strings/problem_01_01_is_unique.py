@@ -24,13 +24,47 @@ If we cannot use additional structures, we can do O(N^2) character comparisons
 to check for uniqueness. If we are allowed to modify the original string, we
 could sort it in place in N*log(N) time and test consecutive characters for equality.
 """
+    
+
+# def is_unique(input_string):
+#     hash_table = [False]*128  # hash table implemented as 128 bit vector
+#     for character in input_string:  # inspect each character
+#         index = ord(character)  # convert character into its ASCII value
+#         if hash_table[index]:  # check if bit at this ASCII value is True
+#             return False
+#         hash_table[index] = True  # add unobserved character to hash table
+#     return True
 
 
+
+
+
+
+
+
+
+
+# MY SOLUTION
+
+
+# check if string has all unique characters
+# def is_unique(input_string):
+#     # initialize dictionary char to bool
+#     dict = {}
+#     # iterate through the array
+#     for char in input_string:
+#         if char not in dict:
+#             dict[char] = True
+#         else:
+#             return False
+#     return True
+
+# no additional DS
 def is_unique(input_string):
-    hash_table = [False]*128  # hash table implemented as 128 bit vector
-    for character in input_string:  # inspect each character
-        index = ord(character)  # convert character into its ASCII value
-        if hash_table[index]:  # check if bit at this ASCII value is True
+    # sort the input string
+    input_string = sorted(input_string)
+    # check for duplication
+    for i in range(1, len(input_string)):
+        if input_string[i] == input_string[i-1]:
             return False
-        hash_table[index] = True  # add unobserved character to hash table
     return True

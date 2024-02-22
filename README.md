@@ -50,7 +50,7 @@ C++ Total: `81` solutions complete.
 3. [Chapter 3 - Stacks and Queues](python_solutions/chapter_03_stacks_queues): `6 / 6`  complete.
 4. [Chapter 4 - Trees and Graphs](python_solutions/chapter_04_trees_and_graphs): `11 / 12` complete.  
 5. [Chapter 5 - Bit Manipulation](python_solutions/chapter_05_bit_manipulation): `7 / 8`  complete.
-6. Chapter 6 - Math and Logic: `0 / 10` complete. 
+6. [Chapter 6 - Math and Logic](python_solutions/chapter_06_math_and_logic_puzzles): `1 / 10` complete. 
 7. Chapter 7 - Object Oriented Design: `0 / 12` complete. 
 8. [Chapter 8 - Recursion and Dynamic Programming](python_solutions/chapter_08_recursion_and_dynamic_programming): `11 / 14`  complete.
 9. Chapter 9 - System Design and Scalability: `0 / 8` complete.

@@ -27,17 +27,70 @@ Space complexity: O(1) because bit vector does not scale with string length.
 """
 
 
-def are_permutations(s1, s2):
-    if len(s1) != len(s2):  # unequal length means not permutations
-        return False
+# def are_permutations(s1, s2):
+#     if len(s1) != len(s2):  # unequal length means not permutations
+#         return False
     
-    character_counts = 128 * [0]  # create counts vector
-    for char in s1: 
-        index = ord(char)
-        character_counts[index] += 1  # count the number of each letter
-    for char in s2: 
-        index = ord(char)
-        character_counts[index] -= 1
-        if character_counts[index] < 0:
+#     character_counts = 128 * [0]  # create counts vector
+#     for char in s1: 
+#         index = ord(char)
+#         character_counts[index] += 1  # count the number of each letter
+#     for char in s2: 
+#         index = ord(char)
+#         character_counts[index] -= 1
+#         if character_counts[index] < 0:
+#             return False
+#     return True
+
+
+
+# MY SOLUTION
+# def are_permutations(s1, s2):
+#     # check for length
+#     if len(s1) != len(s2):
+#         return False
+
+#     # sort the two strings
+#     s1 = sorted(s1)
+#     s2 = sorted(s2)
+
+#     # check for equality
+#     for i in range(len(s1)):
+#         if s1[i] != s2[i]:
+#             return False
+
+#     return True 
+
+def are_permutations(s1, s2):
+    # check for length
+    if len(s1) != len(s2):
+        return False
+
+    # make a dictionary out of both strings
+    dict1 = {}
+    dict2 = {}
+
+    # iterate throw the strings to populate the dictionary
+    for i in range(len(s1)):
+        if s1[i] in dict1:
+            dict1[s1[i]] += 1
+        else:
+            dict1[s1[i]] = 0
+        if s2[i] in dict2:
+            dict2[s2[i]] += 1
+        else:
+            dict2[s2[i]] = 0
+
+    # compare the number of keys
+    if len(dict1.keys()) != len(dict2.keys()):
+        return False
+
+    # compare the two dictionaries
+    # dictionary is of constant size
+    for key in dict1.keys():
+        if key not in dict2:
             return False
+        if dict2[key] != dict1[key]:
+            return False
+        
     return True
